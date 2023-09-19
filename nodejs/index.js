@@ -10,10 +10,18 @@ const config = {
     database: 'nodedb'
 };
 
+
 app.get('/', async (req, res) => {
     try {
         const connection = mysql.createConnection(config);
         await connection.connect();
+        
+        const createTableSql = `CREATE TABLE IF NOT EXISTS people (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL
+        );`
+        
+        await executeQuery(createTableSql, connection);
 
         // Consulta SQL de inserção
         const insertSql = "INSERT INTO people (name) VALUES ('Nathanael')";
