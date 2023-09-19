@@ -33,6 +33,8 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     networks:
       - node-challenge-network    
+    volumes:
+      - ./database:/var/lib/mysql
 
 networks:  
   node-challenge-network:
