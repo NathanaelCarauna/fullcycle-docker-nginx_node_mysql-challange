@@ -11,6 +11,8 @@ Para este desafio, a seguinte descrição foi dada:
   * A linguagem de programação para este desafio é Node/JavaScript.
 </blockquote>
 
+obs: Para rodar, primeiro você deve executar o "npm install" na aplicação node.
+</br>
 Anexo: 
 ![image](https://github.com/NathanaelCarauna/fullcycle-docker-nginx_node_mysql-challange/assets/51246457/c6d61dea-8269-448c-bf0a-308856a96f69)
 <br/>
