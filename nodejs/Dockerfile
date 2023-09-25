@@ -1,6 +1,5 @@
 FROM node:alpine
 
-WORKDIR /usr/src/app
 
 ENV DOCKERIZE_VERSION v0.7.0
 
@@ -11,4 +10,5 @@ RUN apk update --no-cache \
 
 EXPOSE 3000
 
-CMD dockerize -wait tcp://db:3306 -timeout 60m node index.js
+USER node
+WORKDIR /usr/src/app

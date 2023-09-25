@@ -11,6 +11,7 @@ services:
     networks:
       - node-challenge-network
     container_name: node_app
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s sh -c "npm install && node index.js"
     depends_on:
       - db
 
@@ -23,6 +24,8 @@ services:
       - "8080:8080"
     networks:
       - node-challenge-network
+    depends_on:
+      - nodeserver
 
   db:
     image: mysql:5.7
